@@ -30,7 +30,7 @@ public class AddHeatSource extends BasicAction {
 		valid = false;
 		Optional<ItemStack> blockItem = Optional.ofNullable(lib.stringToItemStackOrFirstOreDict(blockStr));
 		
-		blockItem.filter(Lib::itemStackIsBlockImpl)
+		blockItem.filter(Lib::itemStackIsBlock)
 				 .map(ItemStack::getItem)
 				 .map(Block::getBlockFromItem)
 				 .ifPresent(block -> {
